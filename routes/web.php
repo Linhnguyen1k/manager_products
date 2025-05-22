@@ -2,8 +2,10 @@
 // routes/web.php
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redis;
 
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
@@ -17,3 +19,8 @@ Route::get('/test-mail', function () {
     });
     return 'Email sent';
 });
+Route::get('/redis-test', function () {
+    Cache::put('x', [1,2,3], 60);
+    return Cache::get('x');
+});
+

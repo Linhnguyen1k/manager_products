@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.6",
+        "predis/predis": "^3.0",
         "spatie/browsershot": "^5.0",
         "spatie/laravel-pdf": "^1.5"
     },
